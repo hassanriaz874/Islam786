@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseAppCheck
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -14,6 +15,22 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     FirebaseApp.configure()
 
     return true
+  }
+}
+
+class YourAppCheckProviderFactory: NSObject, AppCheckProviderFactory {
+  func createProvider(with app: FirebaseApp) -> AppCheckProvider? {
+    if #available(iOS 14.0, *) {
+      return AppAttestProvider(app: app)
+    } else {
+      return DeviceCheckProvider(app: app)
+    }
+  }
+}
+
+class YourSimpleAppCheckProviderFactory: NSObject, AppCheckProviderFactory {
+  func createProvider(with app: FirebaseApp) -> AppCheckProvider? {
+    return AppAttestProvider(app: app)
   }
 }
 
@@ -25,7 +42,7 @@ struct Islam786App: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(userName: "", password: "",isShowing: true, err: "")
         }
     }
 }
