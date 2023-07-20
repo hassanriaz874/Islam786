@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04D32A392A69B48500A5AFAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04D32A382A69B48500A5AFAC /* GoogleService-Info.plist */; };
 		25E55B982A69B24F00A8489A /* Islam786App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E55B972A69B24F00A8489A /* Islam786App.swift */; };
 		25E55B9A2A69B24F00A8489A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E55B992A69B24F00A8489A /* ContentView.swift */; };
 		25E55B9C2A69B25300A8489A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E55B9B2A69B25300A8489A /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04D32A382A69B48500A5AFAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		25E55B942A69B24F00A8489A /* Islam786.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Islam786.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25E55B972A69B24F00A8489A /* Islam786App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Islam786App.swift; sourceTree = "<group>"; };
 		25E55B992A69B24F00A8489A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -72,6 +74,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04D32A332A69B2A800A5AFAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04D32A372A69B47700A5AFAC /* Plist */,
+				04D32A362A69B2CA00A5AFAC /* Entitlement */,
+				04D32A342A69B2B100A5AFAC /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04D32A342A69B2B100A5AFAC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				25E55B9B2A69B25300A8489A /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		04D32A352A69B2BE00A5AFAC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				25E55B972A69B24F00A8489A /* Islam786App.swift */,
+				25E55B992A69B24F00A8489A /* ContentView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		04D32A362A69B2CA00A5AFAC /* Entitlement */ = {
+			isa = PBXGroup;
+			children = (
+				25E55B9D2A69B25300A8489A /* Islam786.entitlements */,
+			);
+			path = Entitlement;
+			sourceTree = "<group>";
+		};
+		04D32A372A69B47700A5AFAC /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				04D32A382A69B48500A5AFAC /* GoogleService-Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
 		25E55B8B2A69B24F00A8489A = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +140,8 @@
 		25E55B962A69B24F00A8489A /* Islam786 */ = {
 			isa = PBXGroup;
 			children = (
-				25E55B972A69B24F00A8489A /* Islam786App.swift */,
-				25E55B992A69B24F00A8489A /* ContentView.swift */,
-				25E55B9B2A69B25300A8489A /* Assets.xcassets */,
-				25E55B9D2A69B25300A8489A /* Islam786.entitlements */,
+				04D32A352A69B2BE00A5AFAC /* Classes */,
+				04D32A332A69B2A800A5AFAC /* Resources */,
 				25E55B9E2A69B25300A8489A /* Preview Content */,
 			);
 			path = Islam786;
@@ -217,6 +260,9 @@
 				Base,
 			);
 			mainGroup = 25E55B8B2A69B24F00A8489A;
+			packageReferences = (
+				04D32A3B2A69B5EA00A5AFAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 25E55B952A69B24F00A8489A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -235,6 +281,7 @@
 			files = (
 				25E55BA02A69B25300A8489A /* Preview Assets.xcassets in Resources */,
 				25E55B9C2A69B25300A8489A /* Assets.xcassets in Resources */,
+				04D32A392A69B48500A5AFAC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +458,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Islam786/Islam786.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Islam786/Resources/Entitlement/Islam786.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Islam786/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -425,15 +474,15 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 12;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = waseemandhassan.com.Islam786;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -447,10 +496,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Islam786/Islam786.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Islam786/Resources/Entitlement/Islam786.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Islam786/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -461,15 +512,15 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.2;
+				MACOSX_DEPLOYMENT_TARGET = 12;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = waseemandhassan.com.Islam786;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -604,6 +655,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04D32A3B2A69B5EA00A5AFAC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 25E55B8C2A69B24F00A8489A /* Project object */;
 }
